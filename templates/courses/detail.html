@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto space-y-6">
+    <div>
+        <button onclick="history.back()" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-indigo-600 gap-2 transition">
+            &larr; Orqaga qaytish
+        </button>
+    </div>
+
+    <div class="bg-white rounded-3xl border border-slate-100 shadow-md overflow-hidden">
+        <div class="h-32 bg-gradient-to-r from-indigo-500 to-purple-600 relative"></div>
+        <div class="px-8 pb-6 relative flex flex-col items-center -mt-16 border-b border-slate-50">
+            <p>{{ student.first_name }}  {{ student.last_name  }}</p>
+
+            <span class="mt-1 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-full">Faol Talaba</span>
+        </div>
+
+        <div class="p-8 space-y-4">
+            <h3 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-2">Tizimdagi Ma'lumotlari</h3>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-slate-50 rounded-2xl">
+                    <p class="text-xs text-slate-400 font-medium">Telefon raqam</p>
+                    <p class="text-sm font-bold text-slate-700 mt-1">{{ student.phone_number }}</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-2xl">
+                    <p class="text-xs text-slate-400 font-medium">Kurs</p>
+                    <p class="text-sm font-bold text-indigo-600 mt-1">{{ student.course.title }}</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-2xl">
+                    <p class="text-xs text-slate-400 font-medium">Tug'ilgan yili</p>
+                    <p class="text-sm font-bold text-indigo-600 mt-1">{{ student.birth_year }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

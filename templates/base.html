@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCenter</title>
+
+    {% include 'components/_scripts.html' %}
+
+
+    {% include 'components/_style.html' %}
+
+
+</head>
+<body class="bg-[#f8fafc] text-[#1e293b] min-h-screen flex flex-col">
+
+    {% include 'layout/nav.html' %}
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% include 'layout/footer.html' %}
+
+</body>
+</html>
