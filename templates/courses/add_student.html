@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <p>
+            <label for="{{ field.id_for_label }}">
+                {{ field.label }}
+            </label>
+
+            {{ field }}
+
+            {% if field.errors %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </p>
+    {% endfor %}
+
+    <button class="btn btn-warning">
+        {% if '/update/' in request.path %}
+        Update
+        {% else %}
+        Saqlash
+        {% endif %}
+    </button>
+
+</form>
+{% endblock content %}
